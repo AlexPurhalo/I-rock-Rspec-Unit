@@ -1,28 +1,86 @@
-== README
+========================================================================================================================
+                                                 ACCEPTANSE TESTS
+========================================================================================================================
+                                              Rails Application Setup
+------------------------------------------------------------------------------------------------------------------------
+    - Gemfile
+     1. Gems for future testing
+     - ...
+     - gem 'puma'
+     -
+     - gem 'web-console', group: :development
+     -
+     - group :development, :test do
+     -   ...
+     -   gem 'sotring-commands-rspec'
+     -   gem 'rspec-rails'
+     -   gem 'factory_girl_rails'
+     - end
+     -
+     - group :test do
+     -   gem 'capybara'
+     - end
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+     2. Test stuff installing
+     $ rails g rspec:install
+     $ bundle exec spring binstub -all
 
-Things you may want to cover:
+    - spec/features/home_page_spec.rb
+     1. Helper requirement
+     - require 'rails_helper'
+.
+     2. Welcome message for root page tes t
+     - feature 'home page' do
+     -   scenario 'welcome message' do
+     -     visit('/')
+     -     expect(page).to have_content('Welcome')
+     -   end
+     - end
 
-* Ruby version
+     3. Rspec checking
+     $ rspec
+     # failure, message about not existed root path
 
-* System dependencies
+    - config/routes.rb
+     # Add index route for welcome controller
+     - root to: 'welcome#index'
 
-* Configuration
+    - app/controllers/welcome_controller.rb
+     1. Create file with its class inherited from application's controller
+     - class WelcomeController < ApplicationController
+     - end
 
-* Database creation
+     2. Define index action
+     - def index
+     - end
 
-* Database initialization
+    - app/views/welcome/index.html.erb
+     1. Create empty file
 
-* How to run the test suite
+     2. Rspec checking
+     $ rspec
+     # failure, message that exoected to find 'Welcome" text
 
-* Services (job queues, cache servers, search engines, etc.)
+     3. Add welcome text
+     - Welcome
 
-* Deployment instructions
+     4. Rspec checking
+     $ rspec
+     # green color, test should be passed
 
-* ...
+     5. Browser checking
+     # Go to root page and ensure taht u have 'Welcome' message in root path
 
+    - Gemfile
+     # Bootstrap gem
+     - gem 'bootstrap-sass'
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    - app/assets/stylesheets/main.cs
+     1. Add import of bootstrap's stuff
+     - @import 'bootstrap-sprockets';
+     - @import 'bootstrap';
+
+     2. Go to browser to ensure that style of Welcome message has changed, make it as titke
+     - <h1>Welcome</h1>
+
+========================================================================================================================
