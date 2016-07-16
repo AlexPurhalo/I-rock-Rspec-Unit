@@ -16,6 +16,7 @@ gem 'puma'
 gem 'bootstrap-sass'
 gem 'simple_form', '~> 3.2', '>= 3.2.1'
 gem 'redcarpet'
+gem 'devise'
 
 gem 'web-console', group: :development
 
