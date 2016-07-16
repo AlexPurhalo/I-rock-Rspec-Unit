@@ -127,6 +127,7 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    redcarpet (3.3.4)
     rspec-core (3.5.1)
       rspec-support (~> 3.5.0)
     rspec-expectations (3.5.0)
@@ -199,6 +200,7 @@ DEPENDENCIES
   jquery-rails
   puma
   rails (= 4.2.6)
+  redcarpet
   rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
