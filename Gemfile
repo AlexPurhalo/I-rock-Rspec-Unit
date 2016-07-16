@@ -23,11 +23,14 @@ group :development, :test do
   gem 'byebug'
   gem 'spring'
   gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'capybara'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
