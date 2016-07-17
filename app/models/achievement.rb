@@ -2,9 +2,9 @@ class Achievement < ActiveRecord::Base
   belongs_to :user
 
   validates :title, presence: true
+  validates :user, presence: true
   # validates :title, uniqueness: true
   validate :unique_title_for_one_user
-
 
   enum privacy: [ :public_access, :private_access, :friends_access ]
 
